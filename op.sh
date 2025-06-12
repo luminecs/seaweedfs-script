@@ -1,21 +1,26 @@
+# 创建桶
 aws s3api create-bucket --bucket my-test-bucket --endpoint-url http://192.168.60.59:9999 --profile seaweedfs
+
+# 列出桶
 aws s3api list-buckets --endpoint-url http://192.168.60.59:9999 --profile seaweedfs
 
-创建大文件
-
+# 创建大文件
 dd if=/dev/urandom of=large_test_file.bin bs=1M count=100
+
+# 上传文件
 aws s3 cp large_test_file.bin s3://my-test-bucket/ \
   --endpoint-url http://192.168.60.59:9999 \
   --profile seaweedfs
-
+  
+# 列出文件
 aws s3 ls s3://my-test-bucket/ \
   --endpoint-url http://192.168.60.59:9999 \
   --profile seaweedfs
 
+# 获取元数据
 aws s3api head-object --bucket my-test-bucket --key large_test_file.bin \
   --endpoint-url http://192.168.60.59:9999 \
   --profile seaweedfs
-
 
 # 从 S3 下载文件，保存为 downloaded_file.bin
 aws s3 cp s3://my-test-bucket/large_test_file.bin downloaded_file.bin \
@@ -54,6 +59,7 @@ md5sum downloaded_file.bin
 # lumine@fedora:~/seaweedfs-data/test-data$ md5sum large_test_file.bin 
 # bcf133a5385361c17101ce61690c85f8  large_test_file.bin
 
+# 删除文件
 aws s3 rm s3://my-test-bucket/large_test_file.bin \
   --endpoint-url http://192.168.60.59:9999 \
   --profile seaweedfs
