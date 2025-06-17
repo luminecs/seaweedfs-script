@@ -7,5 +7,5 @@ nohup weed volume \
 -dataCenter=dc1 \
 -rack=rack1 \
 -max=100 \
->/home/lumine/seaweedfs-data/volume01.log 2>&1&
+2>&1&
 
