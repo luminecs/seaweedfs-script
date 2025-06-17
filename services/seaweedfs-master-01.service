@@ -10,8 +10,7 @@ ExecStart=/usr/local/bin/weed master \
   -ip=192.168.60.59 \
   -mdir=/root/seaweedfs-data/master01 \
   -defaultReplication=000 \
-  -garbageThreshold=0.3 \
-  -volumePreallocate
+  -garbageThreshold=0.3
 Restart=on-failure
 RestartSec=5s
 LimitNOFILE=65536
