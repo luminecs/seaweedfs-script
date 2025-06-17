@@ -1,0 +1,19 @@
+# /etc/systemd/system/seaweedfs-s3-01.service
+
+[Unit]
+Description=SeaweedFS S3 Gateway (run as root)
+Wants=seaweedfs-filer-01.service
+After=network.target seaweedfs-filer-01.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/weed s3 \
+  -ip.bind=192.168.60.59 \
+  -port=9999 \
+  -filer=192.168.60.59:9888
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

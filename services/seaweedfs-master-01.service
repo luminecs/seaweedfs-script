@@ -1,0 +1,20 @@
+# /etc/systemd/system/seaweedfs-master-01.service
+
+[Unit]
+Description=SeaweedFS Master (run as root)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/weed master \
+  -ip=192.168.60.59 \
+  -mdir=/root/seaweedfs-data/master01 \
+  -defaultReplication=000 \
+  -garbageThreshold=0.3 \
+  -volumePreallocate
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

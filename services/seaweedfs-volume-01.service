@@ -1,0 +1,23 @@
+# /etc/systemd/system/seaweedfs-volume-01.service
+[Unit]
+Description=SeaweedFS Volume (run as root)
+Wants=seaweedfs-master-01.service
+After=network.target seaweedfs-master-01.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/weed volume \
+  -ip=192.168.60.59  \
+  -port=9081 \
+  -dir=/home/lumine/seaweedfs-data/volume01 \
+  -fileSizeLimitMB=10240 \
+  -mserver=192.168.60.59:9333 \
+  -dataCenter=dc1 \
+  -rack=rack1 \
+  -max=100
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,18 @@
+# /etc/systemd/system/seaweedfs-filer-01.service
+[Unit]
+Description=SeaweedFS Filer (run as root)
+Wants=seaweedfs-volume-01.service
+After=network.target seaweedfs-volume-01.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/weed filer \
+  -ip=192.168.60.59  \
+  -port=9888 \
+  -master=192.168.60.59:9333
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
