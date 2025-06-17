@@ -9,3 +9,8 @@
 * [Link](https://github.com/Leif160519/seaweedfs)
 * [Link](https://github.com/bingoohuang/blog/issues/57)
 * [SeaweedFS Wiki](https://www.bookstack.cn/books/seaweedfs-wiki)
+
+```
+cd ~/seaweedfs-data
+weed scaffold -config=security >> security.toml
+```
