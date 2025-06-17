@@ -1,7 +1,7 @@
 # /etc/systemd/system/seaweedfs-master-01.service
 
 [Unit]
-Description=SeaweedFS Master (run as root)
+Description=SeaweedFS Master 01 (run as root)
 After=network.target
 
 [Service]

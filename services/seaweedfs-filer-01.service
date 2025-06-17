@@ -1,6 +1,6 @@
 # /etc/systemd/system/seaweedfs-filer-01.service
 [Unit]
-Description=SeaweedFS Filer (run as root)
+Description=SeaweedFS Filer 01 (run as root)
 Wants=seaweedfs-volume-01.service
 After=network.target seaweedfs-volume-01.service
 

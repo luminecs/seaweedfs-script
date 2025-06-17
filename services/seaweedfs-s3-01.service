@@ -1,7 +1,7 @@
 # /etc/systemd/system/seaweedfs-s3-01.service
 
 [Unit]
-Description=SeaweedFS S3 Gateway (run as root)
+Description=SeaweedFS S3 Gateway 01 (run as root)
 Wants=seaweedfs-filer-01.service
 After=network.target seaweedfs-filer-01.service
 
