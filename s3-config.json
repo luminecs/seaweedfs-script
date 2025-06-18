@@ -2,9 +2,7 @@
   "identities": [
     {
       "name": "anonymous",
-      "actions": [
-        "Read"
-      ]
+      "actions": []
     },
     {
       "name": "some_admin_user",
