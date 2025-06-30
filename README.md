@@ -26,5 +26,11 @@ cd .seaweedfs
 # 把 security.toml（由 weed scaffold -config=security -output="." 生成）复制到此目录
 # 可以访问 $HOME/.seaweedfs/security.toml
 
+mkdir seaweedfs-data # /root/seaweedfs-data
+cd seaweedfs-data
+touch s3-config.json # 把 s3-config.json 内容复制到服务器上这个文件中
 
+# 依次把 services 中的服务文件复制到 /etc/systemd/system/ 目录
+# 修改相应的 IP，然后启动并设置开机启动
+# 在 /root 目录依次启动服务：master volume filer s3
 ```
