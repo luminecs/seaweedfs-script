@@ -14,3 +14,5 @@
 cd ~/seaweedfs-data
 weed scaffold -config=security >> security.toml
 ```
+
+[下载链接](https://github.com/seaweedfs/seaweedfs/releases/download/3.92/linux_amd64_full.tar.gz)
