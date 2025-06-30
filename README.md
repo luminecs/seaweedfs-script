@@ -16,3 +16,15 @@ weed scaffold -config=security >> security.toml
 ```
 
 [下载链接](https://github.com/seaweedfs/seaweedfs/releases/download/3.92/linux_amd64_full.tar.gz)
+
+### Deployment
+
+```shell
+cd # /root
+mkdir .seaweedfs
+cd .seaweedfs
+# 把 security.toml（由 weed scaffold -config=security -output="." 生成）复制到此目录
+# 可以访问 $HOME/.seaweedfs/security.toml
+
+
+```
