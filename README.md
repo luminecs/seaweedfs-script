@@ -20,11 +20,8 @@ weed scaffold -config=security >> security.toml
 ### Deployment
 
 ```shell
-cd # /root
-mkdir .seaweedfs
-cd .seaweedfs
 # 把 security.toml（由 weed scaffold -config=security -output="." 生成）复制到此目录
-# 可以访问 $HOME/.seaweedfs/security.toml
+touch /etc/seaweedfs/security.toml
 
 mkdir seaweedfs-data # /root/seaweedfs-data
 cd seaweedfs-data
